@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/17 12:06:41 by dcoelho           #+#    #+#             */
-/*   Updated: 2026/04/20 11:24:52 by dcoelho          ###   ########.fr       */
+/*   Created: 2026/04/22 14:57:50 by dcoelho           #+#    #+#             */
+/*   Updated: 2026/04/22 15:29:49 by dcoelho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	else
-		return (0);
-}
+	size_t	i;
 
-/* int	main(void)
-{
-	printf("%d", ft_isalnum(70));
-} */
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && i < n)
+	{
+		i++;
+	}
+	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+}

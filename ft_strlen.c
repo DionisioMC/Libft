@@ -6,13 +6,23 @@
 /*   By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 16:03:46 by dcoelho           #+#    #+#             */
-/*   Updated: 2026/04/17 16:05:31 by dcoelho          ###   ########.fr       */
+/*   Updated: 2026/04/20 13:43:37 by dcoelho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	
+	int		i;
+	size_t	num;
+
+	i = 0;
+	num = 0;
+	while (s[i] != '\0')
+	{
+		num++;
+		i++;
+	}
+	return (num);
 }
