@@ -6,7 +6,7 @@
 /*   By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 14:57:50 by dcoelho           #+#    #+#             */
-/*   Updated: 2026/04/22 15:29:49 by dcoelho          ###   ########.fr       */
+/*   Updated: 2026/04/24 15:24:01 by dcoelho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && i < n)
+	if (n == 0)
+		return (0);
+	while ((s1[i] == s2[i]) && (s1[i] != '\0') && (i < n - 1))
 	{
 		i++;
 	}
