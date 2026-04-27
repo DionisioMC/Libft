@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 13:55:14 by dcoelho           #+#    #+#             */
-/*   Updated: 2026/04/27 10:31:25 by dcoelho          ###   ########.fr       */
+/*   Created: 2026/04/27 16:43:30 by dcoelho           #+#    #+#             */
+/*   Updated: 2026/04/27 17:32:36 by dcoelho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int ft_lstsize(t_list *lst)
 {
-	size_t		i;
-	char		*dest_char;
-	const char	*src_char;
+	int	num;
 
-	i = 0;
-	dest_char = dest;
-	src_char = src;
-	if (!src && !dest)
+	if (!lst)
+		return (0);
+	num = 0;
+	while (lst)
 	{
-		return (NULL);
+		num++;
+		lst = lst->next;
 	}
-	while (i < n)
-	{
-		dest_char[i] = src_char[i];
-		i++;
-	}
-	return (dest_char);
+	return (num);
 }

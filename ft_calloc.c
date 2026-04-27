@@ -6,21 +6,26 @@
 /*   By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 12:01:14 by dcoelho           #+#    #+#             */
-/*   Updated: 2026/04/23 17:53:15 by dcoelho          ###   ########.fr       */
+/*   Updated: 2026/04/27 15:14:38 by dcoelho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*mem;
+	size_t	total;
 
-	if (nmemb == 0 || size == 0)
+	if (nmemb != 0 && size > (SIZE_MAX / nmemb))
 		return (NULL);
-	mem = malloc(nmemb * size);
+	if (nmemb == 0 || size == 0)
+		return (malloc(1));
+	total = nmemb * size;
+	mem = malloc(total);
 	if (!mem)
 		return (NULL);
-	ft_bzero(mem, nmemb * size);
+	ft_bzero(mem, total);
 	return (mem);
 }
