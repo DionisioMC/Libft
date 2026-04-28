@@ -6,7 +6,7 @@
 /*   By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 17:13:36 by dcoelho           #+#    #+#             */
-/*   Updated: 2026/04/27 15:07:14 by dcoelho          ###   ########.fr       */
+/*   Updated: 2026/04/28 14:42:26 by dcoelho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,12 @@ static int	count_words(char const *s, char c)
 
 static char	**free_data(char **split, int i)
 {
-	while (i--)
+	i--;
+	while (i)
+	{
 		free(split[i]);
+		i--;
+	}
 	free(split);
 	return (NULL);
 }

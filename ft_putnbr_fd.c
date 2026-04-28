@@ -6,13 +6,13 @@
 /*   By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 15:10:02 by dcoelho           #+#    #+#             */
-/*   Updated: 2026/04/27 15:52:00 by dcoelho          ###   ########.fr       */
+/*   Updated: 2026/04/28 12:00:12 by dcoelho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char		c;
 	long int	num;
@@ -30,7 +30,8 @@ void ft_putnbr_fd(int n, int fd)
 		c = num + '0';
 		write(fd, &c, 1);
 	}
-	else{
+	else
+	{
 		ft_putnbr_fd(num / 10, fd);
 		ft_putnbr_fd(num % 10, fd);
 	}

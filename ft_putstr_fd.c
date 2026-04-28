@@ -6,13 +6,13 @@
 /*   By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:26:28 by dcoelho           #+#    #+#             */
-/*   Updated: 2026/04/27 14:44:07 by dcoelho          ###   ########.fr       */
+/*   Updated: 2026/04/28 12:02:45 by dcoelho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (fd == -1 || !s)
 		return ;

@@ -6,7 +6,7 @@
 #    By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/17 13:49:57 by dcoelho           #+#    #+#              #
-#    Updated: 2026/04/27 18:28:01 by dcoelho          ###   ########.fr        #
+#    Updated: 2026/04/28 14:57:35 by dcoelho          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ FILES = ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isprint.c \
 	ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c \
 	ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
-	
+	ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJS = $(FILES:.c=.o)
 
@@ -36,8 +36,6 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(NAME)
-
 clean:
 	rm -f $(OBJS)
 
@@ -46,4 +44,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

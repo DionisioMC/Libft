@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/23 12:01:14 by dcoelho           #+#    #+#             */
-/*   Updated: 2026/04/28 14:32:14 by dcoelho          ###   ########.fr       */
+/*   Created: 2026/04/28 12:06:28 by dcoelho           #+#    #+#             */
+/*   Updated: 2026/04/28 12:09:16 by dcoelho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	void	*mem;
-	size_t	total;
-
-	if (nmemb != 0 && size > (SIZE_MAX / nmemb))
-		return (NULL);
-	if (nmemb == 0 || size == 0)
-		return (malloc(1));
-	total = nmemb * size;
-	mem = malloc(total);
-	if (!mem)
-		return (NULL);
-	ft_bzero(mem, total);
-	return (mem);
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
