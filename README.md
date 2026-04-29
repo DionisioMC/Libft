@@ -4,59 +4,44 @@
 
 ## Description
 
-Libft is a static C library that reimplements a set of fundamental functions from the standard C library (libc), along with additional utility functions and basic data structures.
+**Libft** is a foundational project in the 42 curriculum focused on recreating essential functions from the C standard library (libc), along with additional utility functions and linked list operations.
 
-The main objective of this project is to develop a deep understanding of:
+The objective is to build a personal C library from scratch to gain a deeper understanding of memory management, string manipulation, and data structures.
 
-* memory manipulation
-* string handling
-* dynamic memory allocation
-* data structures
-
-This library is designed to be reused throughout the 42 curriculum, serving as a foundation for future C projects.
+The final output is a static library (`libft.a`) that can be reused in future projects.
 
 ## Library Description
 
 The **Libft** library is organised into three main components:
 
-### 1.Reimplementation of Libc Functions
+### 1. Libc Functions
 
 These functions replicate the behaviour of standard libc functions, following their original specifications:
 
-* **Character classification**  
-  Functions used to confirm character properties such as alphabetic, numeric, ASCII, or printable characters.
 
-* **Memory manipulation**  
-  Functions such as `memset`, `bzero`, `memcpy`, and `memmove` provide direct control over raw memory blocks.
-
-* **String manipulation**  
-  Functions like `strlen`, `strchr`, `strrchr`, `strncmp`, `strlcpy`, `strlcat`, and `strnstr` allow efficient handling of C strings.
-
-* **Type conversion**  
-  `atoi` converts a numeric string into an integer value.
-
-* **Dynamic allocation**  
-  `calloc` and `strdup` allocate and duplicate memory safely.
-
-All of these functions  were implemented independently in order to better understand their internal logic and behaviours.
+- Character checks: `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`
+- String functions: `ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`
+- Memory functions: `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`
+- Conversion: `ft_atoi`
+- Case conversion: `ft_toupper`, `ft_tolower`
+- Allocation: `ft_calloc`, `ft_strdup`
 
 ### 2. Additional Utility Functions
 
 This section contains functions not present in libc:
 
-* `ft_substr`
-* `ft_strjoin`
-* `ft_strtrim`
-* `ft_split`
-* `ft_itoa`
-* `ft_strmapi`
-* `ft_striteri`
-* `ft_putchar_fd`
-* `ft_putstr_fd`
-* `ft_putendl_fd`
-* `ft_putnbr_fd`
-
-These functions provide advanced string processing, integer conversion, functional iteration, and controlled output to file descriptors.
+- `ft_substr` – extract substring
+- `ft_strjoin` – concatenate strings
+- `ft_strtrim` – trim characters
+- `ft_split` – split string into array
+- `ft_itoa` – convert int to string
+- `ft_strmapi` – apply function to string
+- `ft_striteri` – iterate over string
+- File descriptor output:
+  - `ft_putchar_fd`
+  - `ft_putstr_fd`
+  - `ft_putendl_fd`
+  - `ft_putnbr_fd`
 
 ### 3. Data Structures — Linked Lists
 
@@ -116,7 +101,6 @@ Compile your project with:
 The following references were used throughout the development of this project:
 
 * Linux manual pages (`man`)
-* *The C Programming Language* — Brian W. Kernighan and Dennis M. Ritchie
 * GNU C Library Documentation
 * BSD libc Documentation
 * Official 42 Libft Subject

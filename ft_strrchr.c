@@ -6,7 +6,7 @@
 /*   By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 13:46:27 by dcoelho           #+#    #+#             */
-/*   Updated: 2026/04/23 17:05:55 by dcoelho          ###   ########.fr       */
+/*   Updated: 2026/04/29 12:02:32 by dcoelho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char) c)
 		{
 			return ((char *) &s[i]);
 		}

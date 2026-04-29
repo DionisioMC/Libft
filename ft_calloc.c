@@ -6,7 +6,7 @@
 /*   By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 12:01:14 by dcoelho           #+#    #+#             */
-/*   Updated: 2026/04/28 14:32:14 by dcoelho          ###   ########.fr       */
+/*   Updated: 2026/04/29 12:06:36 by dcoelho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (nmemb != 0 && size > (SIZE_MAX / nmemb))
 		return (NULL);
-	if (nmemb == 0 || size == 0)
-		return (malloc(1));
 	total = nmemb * size;
 	mem = malloc(total);
 	if (!mem)

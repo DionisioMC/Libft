@@ -6,7 +6,7 @@
 /*   By: dcoelho <dcoelho@student.42porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 17:13:36 by dcoelho           #+#    #+#             */
-/*   Updated: 2026/04/28 14:42:26 by dcoelho          ###   ########.fr       */
+/*   Updated: 2026/04/29 15:32:40 by dcoelho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	count_words(char const *s, char c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] != c && (s[i - 1] == c || i == 0))
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
 		{
 			words++;
 		}
@@ -33,7 +33,7 @@ static int	count_words(char const *s, char c)
 static char	**free_data(char **split, int i)
 {
 	i--;
-	while (i)
+	while (i >= 0)
 	{
 		free(split[i]);
 		i--;
@@ -59,7 +59,7 @@ static char	**create_arr(const char *s, char c, char **split)
 				char_count++;
 			split[word_count] = ft_substr(s, i, char_count);
 			if (!split[word_count])
-				return (free_data(split, word_count - 1));
+				return (free_data(split, word_count));
 			while (s[i] && s[i] != c)
 				i++;
 			word_count++;
@@ -75,9 +75,12 @@ char	**ft_split(char const *s, char c)
 {
 	char	**split;
 
+	if (!s)
+		return (NULL);
 	split = ft_calloc(count_words(s, c) + 1, sizeof(char *));
 	if (!split)
 		return (NULL);
-	create_arr(s, c, split);
+	if (!create_arr(s, c, split))
+		return (NULL);
 	return (split);
 }
